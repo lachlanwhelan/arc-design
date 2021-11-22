@@ -1,0 +1,154 @@
+.navbar{
+    position: fixed;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: white;
+    z-index: 100;
+}
+    
+.navbar-menu{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.4s ease;
+    background-color: rgba(0, 0, 0, 0.514);
+}
+
+.navbar-menu .menu{
+    padding-top: 100px;
+    width: 80%;
+    height: 100%;
+    margin-left: auto;
+    background-color: rgb(255, 255, 255);
+    transform: translateX(100%);
+    opacity: 0;
+    transition: 0.8s ease;
+}
+
+.navbar-menu .menu li a{
+    padding: 20px 35px;
+}
+
+.navbar-logo{
+    max-width: 150px;
+}
+
+.navbar-toggle{
+   width: 25px;
+   height: 20px; 
+   position: relative;
+   z-index: 2;
+}
+
+.navbar-toggle:hover{
+    cursor: pointer;
+}
+
+.navbar-toggle span{
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    transition: 0.2s ease;
+}
+
+.navbar-toggle span:first-child{
+    top: 0;
+}
+
+.navbar-toggle span:nth-child(2){
+    top: 45%;
+}
+
+.navbar-toggle span:last-child{
+    bottom: 0;
+}
+
+
+.navbar-toggle.toggle-on span:first-child{
+    top: 9px;
+transform: rotate(40deg);
+}
+
+.navbar-toggle.toggle-on span:nth-child(2){
+opacity: 0;
+}
+
+.navbar-toggle.toggle-on span:last-child{
+    bottom: 9px;
+    transform: rotate(-40deg);
+}
+
+.navbar-menu.toggle-on{
+    visibility: visible;
+    opacity: 1;
+}
+
+.navbar-menu.toggle-on .menu{
+    transform: translateX(0);
+    opacity: 1;
+}
+
+
+
+@media only screen and (min-width: 480px) {
+    
+    .navbar-menu .menu{
+        width: 65%;
+    }
+    
+}
+
+@media only screen and (min-width: 940px) {
+    
+
+    .navbar-toggle{
+        display: none;
+    }
+
+    .navbar-menu{
+        visibility: visible;
+        opacity: 1;
+        background: transparent;
+        position: static;
+        margin-left: auto;
+        width: auto;
+    }
+
+    .navbar-menu .menu{
+        display: flex;
+        transition: 0s;
+        transform: translateX(0);
+        width: auto;
+        opacity: 1;
+        padding: 0;
+    }
+
+    .navbar-menu .menu li a{
+        margin:0 10px;
+        transition: 0.2s ease;
+    }
+
+    .navbar-menu .menu li a:hover{
+        color: grey;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    
+    .navbar{
+        justify-content: space-around;
+    }
+
+    .navbar-menu{
+        margin: 0;
+    }
+}
